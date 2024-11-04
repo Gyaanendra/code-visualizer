@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Longest Unique Substring Visualizer</title>
+    <style>
+      body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .c {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+      }
+      .container {
+        margin-top: 25px;
+        text-align: center;
+        max-width: 1000px;
+        padding: 20px;
+        background-color: #1e1e1e;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+      h1 {
+        color: #00ff7f;
+      }
+      iframe {
+        border: none;
+        width: 100%;
+        height: 700px;
+      }
+      p {
+        color: #b0b0b0;
+        font-size: 18px;
+      }
+      .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #808080;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <div class="container">
+        <h1>Longest Unique Substring Visualizer</h1>
+        <p>
+          Use the interactive Python Tutor below to understand the logic behind
+          finding the longest unique substring.
+        </p>
+        <iframe
+          src="https://pythontutor.com/iframe-embed.html#code=def%20sub%28s%29%3A%0A%20%20%20%20char_pos%20%3D%20%7B%7D%0A%20%20%20%20max_length%20%3D%200%0A%20%20%20%20start%20%3D%200%0A%20%20%20%20max_start%20%3D%200%0A%0A%20%20%20%20for%20current_pos,%20char%20in%20enumerate%28s%29%3A%0A%20%20%20%20%20%20%20%20if%20char%20in%20char_pos%20and%20char_pos%5Bchar%5D%20%3E%3D%20start%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20start%20%3D%20char_pos%5Bchar%5D%20%2B%201%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20current_length%20%3D%20current_pos%20-%20start%20%2B%201%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20current_length%20%3E%20max_length%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20max_length%20%3D%20current_length%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20max_start%20%3D%20start%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20char_pos%5Bchar%5D%20%3D%20current_pos%0A%0A%20%20%20%20return%20s%5Bmax_start%3Amax_start%20%2B%20max_length%5D%0A%0A%23%20Example%20usage%0As%20%3D%20input%28%29%0Aprint%28sub%28s%29%29%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=2&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%22abcabcbb%22%5D&textReferences=false"
+        ></iframe>
+        <div class="footer">
+          Powered by
+          <a
+            href="https://pythontutor.com"
+            target="_blank"
+            style="color: #00ff7f"
+            >Python Tutor</a
+          >
+        </div>
+      </div>
+      <div class="container">
+        <h1>Substring Finder Visualizer</h1>
+        <p>
+          Use the interactive Python Tutor below to understand the logic behind
+          finding the substring.
+        </p>
+        <iframe
+          width="800"
+          height="500"
+          frameborder="0"
+          src="https://pythontutor.com/iframe-embed.html#code=sentence%20%3D%20%22This%20is%20an%20example%20sentence.%22%0Asubstring%20%3D%20%22example%22%0A%0Aposition%20%3D%20sentence.find%28substring%29%0Aif%20position%20!%3D%20-1%3A%0A%20%20%20%20print%28f%22The%20substring%20'%7Bsubstring%7D'%20is%20found%20at%20position%20%7Bposition%7D.%22%29%0Aelse%3A%0A%20%20%20%20print%28f%22The%20substring%20'%7Bsubstring%7D'%20was%20not%20found.%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false"
+        >
+        </iframe>
+        <div class="footer">
+          Powered by
+          <a
+            href="https://pythontutor.com"
+            target="_blank"
+            style="color: #00ff7f"
+            >Python Tutor</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
